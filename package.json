@@ -1,0 +1,27 @@
+{
+  "name": "gh-readme-helper",
+  "version": "1.0.0",
+  "description": "Helping create a better Readme",
+  "homepage": "https://github.com/oricardopestana/gh-readme-helper#readme",
+  "bugs": {
+    "url": "https://github.com/oricardopestana/gh-readme-helper/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oricardopestana/gh-readme-helper.git"
+  },
+  "license": "MIT",
+  "author": "Ricardo Pestana",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch ./index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@oricardopestana/ts-utils": "^1.0.5",
+    "@types/node": "^25.9.2",
+    "dotenv": "^17.4.2",
+    "h3": "2.0.1-rc.22"
+  }
+}
