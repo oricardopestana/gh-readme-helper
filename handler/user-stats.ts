@@ -5,8 +5,13 @@ import type { HttpResponse } from "../models/http.model.ts";
 import { useAsync } from "@oricardopestana/ts-utils";
 
 export async function handleUserStats() {
-  const [userData, error] = await useAsync<HttpResponse<GithubUser>, FetchError>(() => GithubService.fetchUserData());
-  if (error) throw new HTTPError(error.statusMessage, { status: error.statusCode });
-  console.log(userData);
-  return userData;
+  const [[userData, userDataError], [userRepos, userReposError]] = await Promise.all([
+    useAsync<HttpResponse<GithubUser>, FetchError>(() => GithubService.fetchUserData()),
+    useAsync<HttpResponse<unknown>, FetchError>(() => GithubService.fetchUserRepos()),
+  ]);
+  if (userDataError || userReposError)
+    throw new HTTPError(userDataError?.statusMessage ?? userReposError?.statusMessage ?? "Error", {
+      status: userDataError?.statusCode ?? userReposError?.statusCode,
+    });
+  return { userData, userRepos };
 }

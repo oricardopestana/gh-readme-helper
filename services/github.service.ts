@@ -1,20 +1,5 @@
-import type { GithubUser } from "../models/github.model.ts";
-import type { HttpResponse } from "../models/http.model.ts";
-
-async function fetchUserData(): Promise<HttpResponse<Nullable<GithubUser>>> {
-  const [_headers, headersError] = getGithubHeaders();
-  if (headersError) return { ok: false, error: headersError };
-
-  const url = new URL(`https://api.github.com/user`);
-  const response = (await fetch(url.toString(), {
-    headers: _headers as HeadersInit,
-  })) as unknown as Response;
-  if (response.ok) {
-    const data = await response.json();
-    return { ok: true, data };
-  }
-  return { ok: false, error: { statusCode: response.status, statusMessage: response.statusText } };
-}
+import { fetchUserData } from "./github/user-data.github.service.ts";
+import { fetchUserRepos } from "./github/user-repos.github.service.ts";
 
 function getGithubHeaders(): [Nullable<Record<string, string>>, Nullable<FetchError>] {
   const ghApiKey = process.env.GH_API_KEY;
@@ -32,5 +17,7 @@ function getGithubHeaders(): [Nullable<Record<string, string>>, Nullable<FetchEr
 }
 
 export const GithubService = {
+  getGithubHeaders,
   fetchUserData,
+  fetchUserRepos,
 };
