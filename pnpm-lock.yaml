@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@oricardopestana/ts-utils':
-        specifier: ^1.0.5
-        version: 1.0.5
+        specifier: ^1.0.7
+        version: 1.0.7
       '@types/node':
         specifier: ^25.9.2
         version: 25.9.2
@@ -23,8 +23,8 @@ importers:
 
 packages:
 
-  '@oricardopestana/ts-utils@1.0.5':
-    resolution: {integrity: sha512-AxpN8wg1wvKubXnT3UcWTP+Ud19/Z+3L8EOFP07IcX4EtFVJvRjF75QmGMIvUQzBNqb++RCDqkhkMXNCrQmlzw==}
+  '@oricardopestana/ts-utils@1.0.7':
+    resolution: {integrity: sha512-WukOUYPAjhRvXF0AeIqHle2beHjbq9v6zNjPn0d6ad10vrlTZ1zvHxNFvQLVi3DSYIABttfu6cXlC5Qx0DezOg==}
 
   '@types/node@25.9.2':
     resolution: {integrity: sha512-G05zqtJhcDLb8uslf5EjCxXg9G1KQxiV8OS0R26IC//Eoyitzqe8z37I7cqvnZlrlSfgocQRfSn/AHBZJJFyGw==}
@@ -56,7 +56,7 @@ packages:
 
 snapshots:
 
-  '@oricardopestana/ts-utils@1.0.5': {}
+  '@oricardopestana/ts-utils@1.0.7': {}
 
   '@types/node@25.9.2':
     dependencies:

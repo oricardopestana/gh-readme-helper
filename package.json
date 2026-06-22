@@ -19,7 +19,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@oricardopestana/ts-utils": "^1.0.5",
+    "@oricardopestana/ts-utils": "^1.0.7",
     "@types/node": "^25.9.2",
     "dotenv": "^17.4.2",
     "h3": "2.0.1-rc.22"

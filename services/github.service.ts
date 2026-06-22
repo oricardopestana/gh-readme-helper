@@ -1,3 +1,4 @@
+import { fetchRepoLanguages } from "./github/repo-languages.github.service.ts";
 import { fetchUserData } from "./github/user-data.github.service.ts";
 import { fetchUserRepos } from "./github/user-repos.github.service.ts";
 
@@ -20,4 +21,5 @@ export const GithubService = {
   getGithubHeaders,
   fetchUserData,
   fetchUserRepos,
+  fetchRepoLanguages,
 };
